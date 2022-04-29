@@ -15,8 +15,17 @@ const db = admin.firestore(); //creates a short cut to access the Firestore data
 
     const restaurantsCol = db.collection('restaurants');
     
-    restaurantsCol.get()    //get All restaurants
-        .then(snapshot => {
+    // restaurantsCol.get()    //get All restaurants
+    //     .then(snapshot => {
+    //         snapshot.docs.forEach(doc => console.log(doc.data())) //loop through all results        
+    //     })
+    //     .catch(console.error)
+
+        restaurantsCol
+            //.where('name', '==', 'Bolay')
+            .where('rating', '>=', 4.75)
+            .get()
+            .then(snapshot => {
             snapshot.docs.forEach(doc => console.log(doc.data())) //loop through all results        
         })
         .catch(console.error)
