@@ -10,8 +10,10 @@ admin.initializeApp({ //connects to our firebase project
 
 const db = admin.firestore(); //creates a short cut to access the Firestore database
 
-const restaurant = { //creating an object --in this case a specific restaurant 
+ //creating an object --in this case a specific restaurant 
     //we want to add to our database
+
+    const restaurantsCol = db.collection('restaurants');
     
 
     name: 'Mister 01',
