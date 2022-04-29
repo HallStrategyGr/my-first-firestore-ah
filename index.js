@@ -15,8 +15,8 @@ const db = admin.firestore(); //creates a short cut to access the Firestore data
 
     const restaurantsCol = db.collection('restaurants');
     
-
-    name: 'Mister 01',
+    const restaurant = {
+    name: 'Mister01',
     address: '555 N Federal Hwy Suite #5, Boca Raton, FL 33432',
     cuisine: 'Pizza',
     rating: 4.9,
